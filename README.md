@@ -12,15 +12,25 @@ When we merge the code to main, the workflow will do terraform apply. This will 
 
 Example:
 
-Apply complete! Resources: 13 added, 0 changed, 0 destroyed.
+Apply complete! Resources: 7 added, 0 changed, 0 destroyed.
 
-Outputs: base_url = "https://232qmvzla2.execute-api.eu-central-1.amazonaws.com/test"
+Outputs:
+
+base_url = "https://qpwns0rbo0.execute-api.eu-central-1.amazonaws.com/test"
 
 Testing:
 
-$ curl -XGET https://232qmvzla2.execute-api.eu-central-1.amazonaws.com/test --header "Content-Type: application/json" --data '{"username":"xyz","password":"xyz"}' Hello from lambda land !!, here are the details of your request: Method is : GET headers is : {'accept': '/', 'content-type': 'application/json', 'Host': '232qmvzla2.execute-api.eu-central-1.amazonaws.com', 'User-Agent': 'curl/7.68.0', 'X-Amzn-Trace-Id': 'Root=1-618a8860-5aee45bc2288a7c60e8433e6', 'X-Forwarded-For': '149.224.41.60', 'X-Forwarded-Port': '443', 'X-Forwarded-Proto': 'https'} Body is : {"username":"xyz","password":"xyz"}
+$ curl -XGET https://qpwns0rbo0.execute-api.eu-central-1.amazonaws.com/test --header "Content-Type: application/json" --data '{"username":"xyz","password":"xyz"}'
+Hello from lambda land !!, here are the details of your request:
+Method is : GET
+headers is : {'accept': '*/*', 'content-type': 'application/json', 'Host': 'qpwns0rbo0.execute-api.eu-central-1.amazonaws.com', 'User-Agent': 'curl/7.68.0', 'X-Amzn-Trace-Id': 'Root=1-618ad0d5-2d1c7a5b15bcc6e979e87e78', 'X-Forwarded-For': '149.224.41.60', 'X-Forwarded-Port': '443', 'X-Forwarded-Proto': 'https'}
+Body is : {"username":"xyz","password":"xyz"}
 
-$ curl https://232qmvzla2.execute-api.eu-central-1.amazonaws.com/test --header "Content-Type: application/json" --data '{"username":"abc","password":"def"}' Hello from lambda land !!, here are the details of your request: Method is : POST headers is : {'accept': '/', 'content-type': 'application/json', 'Host': '232qmvzla2.execute-api.eu-central-1.amazonaws.com', 'User-Agent': 'curl/7.68.0', 'X-Amzn-Trace-Id': 'Root=1-618a896e-73f552de619762846fb73af4', 'X-Forwarded-For': '149.224.41.60', 'X-Forwarded-Port': '443', 'X-Forwarded-Proto': 'https'} Body is : {"username":"abc","password":"def"}
+$ curl https://qpwns0rbo0.execute-api.eu-central-1.amazonaws.com/test --header "Content-Type: application/json" --data '{"username":"abc","password":"def"}'
+Hello from lambda land !!, here are the details of your request:
+Method is : POST
+headers is : {'accept': '*/*', 'content-type': 'application/json', 'Host': 'qpwns0rbo0.execute-api.eu-central-1.amazonaws.com', 'User-Agent': 'curl/7.68.0', 'X-Amzn-Trace-Id': 'Root=1-618ad271-503fdd7f49b84d0a7aaf1d85', 'X-Forwarded-For': '149.224.41.60', 'X-Forwarded-Port': '443', 'X-Forwarded-Proto': 'https'}
+Body is : {"username":"abc","password":"def"}
 
-We have created a s3 backend with dynamodb lock so that the terraform state files are taken care via s3 bucket. Also this helps to  collaborate with your team.
+We have created a s3 backend with dynamodb lock so that the terraform state files are taken care via s3 bucket. Also this helps to  collaborate with your team. For this to work you need to setup the backend first before provisioning all the other resources.
 
