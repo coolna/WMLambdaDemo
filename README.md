@@ -21,14 +21,20 @@ base_url = "https://qpwns0rbo0.execute-api.eu-central-1.amazonaws.com/test"
 Testing:
 
 $ curl -XGET https://qpwns0rbo0.execute-api.eu-central-1.amazonaws.com/test --header "Content-Type: application/json" --data '{"username":"xyz","password":"xyz"}'
+
 Hello from lambda land !!, here are the details of your request:
+
 Method is : GET
+
 headers is : {'accept': '*/*', 'content-type': 'application/json', 'Host': 'qpwns0rbo0.execute-api.eu-central-1.amazonaws.com', 'User-Agent': 'curl/7.68.0', 'X-Amzn-Trace-Id': 'Root=1-618ad0d5-2d1c7a5b15bcc6e979e87e78', 'X-Forwarded-For': '149.224.41.60', 'X-Forwarded-Port': '443', 'X-Forwarded-Proto': 'https'}
 Body is : {"username":"xyz","password":"xyz"}
 
 $ curl https://qpwns0rbo0.execute-api.eu-central-1.amazonaws.com/test --header "Content-Type: application/json" --data '{"username":"abc","password":"def"}'
+
 Hello from lambda land !!, here are the details of your request:
+
 Method is : POST
+
 headers is : {'accept': '*/*', 'content-type': 'application/json', 'Host': 'qpwns0rbo0.execute-api.eu-central-1.amazonaws.com', 'User-Agent': 'curl/7.68.0', 'X-Amzn-Trace-Id': 'Root=1-618ad271-503fdd7f49b84d0a7aaf1d85', 'X-Forwarded-For': '149.224.41.60', 'X-Forwarded-Port': '443', 'X-Forwarded-Proto': 'https'}
 Body is : {"username":"abc","password":"def"}
 
