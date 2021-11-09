@@ -22,4 +22,6 @@ $ curl -XGET https://232qmvzla2.execute-api.eu-central-1.amazonaws.com/test --he
 
 $ curl https://232qmvzla2.execute-api.eu-central-1.amazonaws.com/test --header "Content-Type: application/json" --data '{"username":"abc","password":"def"}' Hello from lambda land !!, here are the details of your request: Method is : POST headers is : {'accept': '/', 'content-type': 'application/json', 'Host': '232qmvzla2.execute-api.eu-central-1.amazonaws.com', 'User-Agent': 'curl/7.68.0', 'X-Amzn-Trace-Id': 'Root=1-618a896e-73f552de619762846fb73af4', 'X-Forwarded-For': '149.224.41.60', 'X-Forwarded-Port': '443', 'X-Forwarded-Proto': 'https'} Body is : {"username":"abc","password":"def"}
 
-We have created a s3 backend with dynamodb lock so that the terraform state files are taken care. Also this helps to  collaborate with your team.
+We have created a s3 backend with dynamodb lock so that the terraform state files are taken care via s3 bucket. Also this helps to  collaborate with your team.
+
+Also make sure the user has enough permissions to make the changes in aws.
