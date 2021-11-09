@@ -24,4 +24,3 @@ $ curl https://232qmvzla2.execute-api.eu-central-1.amazonaws.com/test --header "
 
 We have created a s3 backend with dynamodb lock so that the terraform state files are taken care via s3 bucket. Also this helps to  collaborate with your team.
 
-Also make sure the user has enough permissions to make the changes in aws.
